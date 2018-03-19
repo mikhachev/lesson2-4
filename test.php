@@ -20,8 +20,8 @@ echo '<p><a href="index.php"> Авторизоваться </a><p>';
     }?>
 
 <h1 ><?php echo $student ?>, решите тест</h1>
-<?php $testing = null;
-$testid = null;
+<?php
+
 if (file_exists($_GET['testname'])==false) {
         header("HTTP/1.1 404 Not Found");
         echo "<p style='color:red;'>Тест не найден!</p>";
