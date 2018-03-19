@@ -12,12 +12,12 @@ else {
 }
 $list = glob('tests/*.json');
 
-if (isset($_POST['testdel'])) {
+if (isset($_POST['delete_test'])) {
     foreach ($list as $i => $value) {
-        if ($value == 'tests/' . $_POST['testdel'] . '.json') {
+        if ($value == 'tests/' . $_POST['delete_test'] . '.json') {
             unset ($list[$i]);
             sort($list);
-            echo "Тест ".$_POST['testdel']." удален.";
+            echo "Тест ".$_POST['delete_test']." удален.";
         }
     }
 }
@@ -32,33 +32,20 @@ if (isset($_POST['testdel'])) {
 <body>
 <h1>Список тестов </h1><br>
 
-<?php
-/*$dir ='tests/';
-$list=glob("tests/*.json");
-$z=count(glob("tests/*.json"));
-$x=0;
-echo "Загруженные тесты: ". "<br/><br/>";
-do {
-    echo $list[$x], "- Тест № ", $x+1, <a href="test.php?testname=<?= $name ?>">Выбрать тест</a>"</br>";
-
-}   while ($x++<=$z);
-
-
-*/?><!--
-<h2>Введите номер теста для его прохождения</h2>
-<!--<form action="test.php?testNumber=1" method="get">
-    <label>
-        <input type="text" name="testNumber">
-    </label>
-    <input type="submit" value="Пройти тест" >
-</form>-->
 
 <?php
 foreach (glob("tests/*.json") as $i => $filename) {
     $name = basename($filename);?>
     <label ><a href="test.php?testname=<?= $name ?>">Выбрать тест</a> <?= ++$i, "</br>" ?> </label>
-
 <?php }?>
+<?php if (isAuthorizedAdmin()): ?>
+    <a href="admin.php">К форме загрузки тестов</a>
+    <p>Удаление теста:</p>
+    <form method="POST">
+        <input type="text" name="delete_test" placeholder="Имя удаляемого теста">
+        <input type="submit" value="Удалить">
+    </form>
+<?php endif; ?>
 </body>
 </html>
 
