@@ -1,0 +1,43 @@
+
+[{
+  "question": "Зелюки хрюкотали как кто?",
+  "answers":[{
+		"answer":"Бармаглот",
+		"value": "1",
+		"name": "q1"
+	    },{
+	    "answer":"Брандашмыг",
+		"value": "3",
+		"name": "q1"
+		},{
+	    "answer":"мюмзики в мове",
+		"value": "2",
+		"name": "q1"
+		},{
+	    "answer":"Алиса",
+		"value": "8",
+		"name": "q1"
+		}]
+ 
+  } ,
+
+{"question": "Дважды два",
+  "answers":[{
+		"answer":"5",
+		"value": "1",
+		"name": "q2"
+	    },{
+	    "answer":"3",
+		"value": "3",
+		"name": "q2"
+		},{
+	    "answer":"-4",
+		"value": "6",
+		"name": "q2"
+		},{
+	    "answer":"4",
+		"value": "2",
+		"name": "q2"
+		}]
+  
+  } ]

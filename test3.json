@@ -1,0 +1,43 @@
+
+[{
+  "question": "Трижды три",
+  "answers":[{
+		"answer":"9",
+		"value": "2",
+		"name": "q1"
+	    },{
+	    "answer":"4",
+		"value": "3",
+		"name": "q1"
+		},{
+	    "answer":"33",
+		"value": "4",
+		"name": "q1"
+		},{
+	    "answer":"12",
+		"value": "8",
+		"name": "q1"
+		}],
+  "correct_value ": "2"
+  } ,
+
+{"question": "1+4",
+  "answers":[{
+		"answer":"5",
+		"value": "2",
+		"name": "q2"
+	    },{
+	    "answer":"3",
+		"value": "3",
+		"name": "q2"
+		},{
+	    "answer":"14",
+		"value": "6",
+		"name": "q2"
+		},{
+	    "answer":"0",
+		"value": "5",
+		"name": "q2"
+		}],
+  "correct_value ": "9"
+  } ]
