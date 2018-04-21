@@ -1,10 +1,24 @@
 <?php
+// Инициируем сессию
+session_start();
+
+function rights()
+{
+if (!isAuthorizedUser()) {
+   
+    header("Location: index.php", true, 403);
+    echo "Вы не авторизованы.";
+    echo '<p><a href="index.php"> Авторизоваться </a><p>';
+    http_response_code(403);
+    die;
+}
+else {
+    echo '<p>Привет, '. htmlspecialchars($_SESSION['user']['username']).'. <a href="logout.php"> Выйти </a><p>';
+}	
+}
 // Для того чтобы выводить все ошибки и предупреждения
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
-// Инициируем сессию
-session_start();
 
 /**
  * Проверка является ли пользователь авторизованным

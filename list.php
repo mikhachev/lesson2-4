@@ -1,15 +1,7 @@
 <?php
 require_once "functions.php";
 
-if (!isAuthorizedUser()) {
-    echo "Вы не авторизованы.";
-    echo '<p><a href="index.php"> Авторизоваться </a><p>';
-    http_response_code(403);
-    die;
-}
-else {
-    echo '<p>Привет, '. htmlspecialchars($_SESSION['user']['username']).'. <a href="logout.php"> Выйти </a><p>';
-}
+rights();
 $list = glob('tests/*.json');
 
 if (isset($_POST['delete_test'])) {
@@ -36,7 +28,7 @@ if (isset($_POST['delete_test'])) {
 <?php
 foreach (glob("tests/*.json") as $i => $filename) {
     $name = basename($filename);?>
-    <label ><a href="test.php?testname=<?= $name ?>">Выбрать тест</a> <?= ++$i, "</br>" ?> </label>
+    <label ><a href="test.php?testname=<?= $name ?>">Выбрать тест</a> <?=" ++$i, </br>" ?> </label>
 <?php }?>
 <?php if (isAuthorizedAdmin()): ?>
     <a href="admin.php">К форме загрузки тестов</a>

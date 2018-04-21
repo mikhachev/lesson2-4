@@ -2,7 +2,7 @@
 require_once 'functions.php';
 
 if (isAuthorizedUser()) {
-    redirect('list');
+    redirect('list.php');
 }
 
 $errors = [];

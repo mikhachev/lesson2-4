@@ -1,4 +1,8 @@
+<?php
+require 'functions.php';
 
+rights();
+?>
 <!DOCTYPE>
 <html lang="ru">
 <head>
